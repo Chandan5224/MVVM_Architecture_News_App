@@ -2,7 +2,6 @@ package com.example.mvvm_news_app.adapters
 
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -49,7 +48,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleBViewHolder>() {
 
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(holder.articleImage)
-            holder.articleSource.text = article.source.name
+            holder.articleSource.text = article.source?.name
             holder.articleDate.text = article.publishedAt
             holder.articleDes.text = article.description
             holder.articleTitle.text = article.title
